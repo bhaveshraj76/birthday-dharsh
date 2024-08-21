@@ -28,6 +28,9 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.intervalId = setInterval(() => {
       this.updateCountdown();
     }, 1000); // Update every second
+    if (this.dateService.isBirthdayToday()) {
+      this.router.navigate(['/birthday']);
+    }
   }
 
   updateCountdown() {
